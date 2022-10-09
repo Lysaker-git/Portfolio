@@ -1,5 +1,19 @@
 const projectsContainer = document.querySelector(".projects");
 const langContainer = document.querySelector(".languagesContainer");
+const hamburger = document.querySelector(".hamburger");
+const nav = document.querySelector("nav");
+const topBun = document.querySelector(".hamburger-top");
+const middleBun = document.querySelector(".hamburger-middle");
+const bottomBun = document.querySelector(".hamburger-bottom");
+
+hamburger.addEventListener('click', function (event) {
+    event.preventDefault();
+    nav.classList.toggle("navShow");
+    topBun.classList.toggle("hamburger-top-open");
+    middleBun.classList.toggle("hamburger-middle-open");
+    bottomBun.classList.toggle("hamburger-bottom-open");
+
+})
 
 const mySkills = [
     {

@@ -77,7 +77,8 @@ header, main > section, .cards, footer {
     margin-bottom: calc(1rem + 20vw);
 }
 .posistion-nav {
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
     right: 0;
@@ -95,21 +96,63 @@ nav ul, footer ul {
 nav ul li a, footer ul li a {
     text-decoration: none;
 }
-nav {
+/* nav {
     display: none;
-}
+} */
 .hamburger {
     display: flex;
     flex-direction: column;
     margin-left: auto;
 }
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    top: 0;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+.hamburger-top-open {
+    transform: rotate(20deg);
+    top: -10px;
+}
+.hamburger-middle-open {
+    transform: rotate(45deg);
 
+}
+.hamburger-bottom-open {
+    transform: rotate(-45deg);
+    top: -13px;
+}
+.active {
+    position: relative;
+}
+.active::after {
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: currentColor;
+}
+nav {
+    position: relative;
+    backdrop-filter: blur(15px);
+    width: fit-content;
+    padding: 1rem;
+    left: -12rem;
+    transition: all .5s ease-in-out;
+}
+.navShow {
+    left: 0;
+}
 @media only screen and (min-width: 1000px) {
     .hamburger {
         display: none;
     }
     nav {
         display: block;
+        left: 0;
     }
     nav ul {
         display: flex;
@@ -340,10 +383,26 @@ input, select, textarea {
     background-color:rgb(208, 212, 233);
     max-width: 600px;
 }
+textarea {
+    min-height: 4rem;
+}
 footer p {
     width: 100%;
     text-align: center;
     padding: 2rem;
+}
+footer button {
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #95abd8;
+    margin: 2rem 0;
+    font-size: 1rem;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+}
+footer button:hover {
+    background-color: #626f8a;
+
 }
 @media only screen and (min-width: 1000px) {
     .contact-links {
@@ -353,12 +412,13 @@ footer p {
     }
     .contact > div {
         display: grid;
+        margin-top: 7rem;
         grid-template-areas: 
         "header header"
         "links form"
         "copy copy"
         ;
-        grid-template-rows: repeat(3, 33vh);
+        grid-template-rows: 10vh fit-content minmax(10rem, 20rem);
     }
     .contact h2 {
         grid-area: header;
@@ -369,6 +429,7 @@ footer p {
     }
     .contact-form {
         grid-area: form;
+        min-height: fit-content;
 
     }
     .contact p {
