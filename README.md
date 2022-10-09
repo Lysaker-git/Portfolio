@@ -46,3 +46,6 @@ https://portfolio-rsl.netlify.app/#contact
 
 ## Page Location: 
 [Portfolio](https://portfolio-rsl.netlify.app)
+
+## Aknowledgments and Contributions: 
+<a href="https://www.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_17740155.htm#query=wallpaper&position=17&from_view=keyword">Image by upklyak</a> on Freepik
