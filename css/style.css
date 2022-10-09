@@ -394,6 +394,7 @@ footer p {
 footer button {
     padding: 1rem;
     border-radius: 10px;
+    border:none;
     background-color: #95abd8;
     margin: 2rem 0;
     font-size: 1rem;
@@ -402,7 +403,16 @@ footer button {
 }
 footer button:hover {
     background-color: #626f8a;
-
+}
+.error {
+    border: 3px solid red;
+}
+.hidden {
+    display: none;
+    padding: 0;
+    font-weight: light;
+    text-align: end;
+    color: rgb(230, 150, 150);
 }
 @media only screen and (min-width: 1000px) {
     .contact-links {
@@ -430,11 +440,11 @@ footer button:hover {
     .contact-form {
         grid-area: form;
         min-height: fit-content;
+        margin-top: 3rem;
 
     }
     .contact p {
         grid-area: copy;
-        
     }
 
 }

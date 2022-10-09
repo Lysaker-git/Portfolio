@@ -5,6 +5,61 @@ const nav = document.querySelector("nav");
 const topBun = document.querySelector(".hamburger-top");
 const middleBun = document.querySelector(".hamburger-middle");
 const bottomBun = document.querySelector(".hamburger-bottom");
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const submit = document.querySelector("form");
+const inputFields = document.querySelectorAll("input, textArea");
+
+console.log(hiddenElements[1])
+
+
+submit.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let counter = 0;
+    inputFields.forEach(input => {
+        let i = input;
+        let value = input.value
+        if (input.name === "name") {
+            if (value.trim().length < 4) {
+                i.classList.add("error");
+                hiddenElements[0].style.display = "block";
+            } else {
+                i.classList.remove("error");
+                hiddenElements[0].style.display = "none"
+            };
+        } else if (input.name === "email") {
+            if (!validateMail(value)) {
+                i.classList.add("error");
+                hiddenElements[1].style.display = "block";
+            } else {
+                i.classList.remove("error");
+                hiddenElements[1].style.display = "none"
+            };
+        } else if (input.name === "text") {
+            if (value.trim().length < 20) {
+                i.classList.add("error");
+                hiddenElements[2].style.display = "block";
+            } else {
+                i.classList.remove("error");
+                hiddenElements[2].style.display = "none"
+            };
+        };
+    });
+    inputFields.forEach(input => {
+        input.classList.contains("error") ? counter + 1 : counter - 1;
+    })
+    if (counter === 0) {
+        return true;
+    } else {
+        return false;
+    };
+});
+
+function validateMail(email) {
+    const regEx = /\S+@\S+\.\S+/;
+    const match = regEx.test(email);
+    return match;
+};
 
 hamburger.addEventListener('click', function (event) {
     event.preventDefault();
@@ -119,50 +174,54 @@ function getSkills () {
 
 
 function getProjects () {
-    projectsContainer.innerHTML = "";
-    projectInformation.forEach(project => {
-        let title = project.title;
-        let pOne = project.Para1;
-        let pTwo = project.Para2;
-        let color = project.Color;
-        let src = project.src;
-        let gitSrc = project.gitLink;
-        let img = project.img;
-        let txtColor = project.txtColor;
-        let finishedContent = "";
-
-
-        if (pTwo) {
-            finishedContent = 
-                `<div><p>${pOne}</p>
-                <p>${pTwo}</p></div>`
-        } else {
-            finishedContent = `</div><p>${pOne}</p></div>`
-        };
-
-        
-        projectsContainer.innerHTML += `
-        <div class="cards" style="
-            background-color:${color}; 
-            background-image:url(${img});
-            color: ${txtColor};
-            ">
-            <div class="max-w">
-                <h2>${title}</h2>
-                ${finishedContent}
-                <div class="cards-link">
-                <a href="${gitSrc}" style="
+    try {
+        projectsContainer.innerHTML = "";
+        projectInformation.forEach(project => {
+            let title = project.title;
+            let pOne = project.Para1;
+            let pTwo = project.Para2;
+            let color = project.Color;
+            let src = project.src;
+            let gitSrc = project.gitLink;
+            let img = project.img;
+            let txtColor = project.txtColor;
+            let finishedContent = "";
+    
+    
+            if (pTwo) {
+                finishedContent = 
+                    `<div><p>${pOne}</p>
+                    <p>${pTwo}</p></div>`
+            } else {
+                finishedContent = `</div><p>${pOne}</p></div>`
+            };
+    
+            
+            projectsContainer.innerHTML += `
+            <div class="cards" style="
+                background-color:${color}; 
+                background-image:url(${img});
                 color: ${txtColor};
-                ">Go to Git</a>
-                <a href="${src}" style="
-                color: ${txtColor};
-                ">View Page</a>
+                ">
+                <div class="max-w">
+                    <h2>${title}</h2>
+                    ${finishedContent}
+                    <div class="cards-link">
+                    <a href="${gitSrc}" style="
+                    color: ${txtColor};
+                    ">Go to Git</a>
+                    <a href="${src}" style="
+                    color: ${txtColor};
+                    ">View Page</a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        `
-    });
+    
+            `
+        });
+    } catch (error) {
+        console.log(error)
+    }
 };
 
 getProjects();

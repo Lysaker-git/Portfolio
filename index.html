@@ -100,8 +100,10 @@
                 <h3>Contact Form</h3>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name">
+                <p class="hidden">Name must be longer then 4 letters</p>
                 <label for="email">E:mail</label>
                 <input type="email" name="email" id="email">
+                <p class="hidden">Not a valid E-mail</p>
                 <label for="subject">Subject</label>
                 <select name="subject" id="subject">
                     <option value="Front End">Web Development</option>
@@ -113,7 +115,9 @@
                 </select>
                 <label for="text">Topic:</label>
                 <textarea name="text" id="text"></textarea>
+                <p class="hidden">Topic must be longer than 20 letters</p>
                 <button type="submit">Send Question</button>
+                
             </form>
             <p>&copy; Robin Lysaker 2022</p>
         </div>
