@@ -314,7 +314,7 @@ footer > div {
 }
 footer h2 {
     font-size: calc(1rem + 1vw);
-    padding: 4rem 0 0;
+    padding: 4rem 0 2rem;
 }
 footer ul li a {
     color:rgb(155, 164, 208);
@@ -351,24 +351,29 @@ footer p {
         gap: 5rem;
         margin-top: 3rem;
     }
-    .contact {
+    .contact > div {
         display: grid;
         grid-template-areas: 
         "header header"
         "links form"
         "copy copy"
         ;
+        grid-template-rows: repeat(3, 33vh);
     }
     .contact h2 {
         grid-area: header;
+        margin-top: auto;
     }
     .contact-links {
         grid-area: links;
     }
     .contact-form {
         grid-area: form;
+
     }
-    .contact > p {
+    .contact p {
         grid-area: copy;
+        
     }
+
 }
