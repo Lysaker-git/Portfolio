@@ -386,7 +386,7 @@ input, select, textarea {
 textarea {
     min-height: 4rem;
 }
-footer p {
+footer p, footer a {
     width: 100%;
     text-align: center;
     padding: 2rem;
@@ -427,6 +427,7 @@ footer button:hover {
         "header header"
         "links form"
         "copy copy"
+        "contr contr"
         ;
         grid-template-rows: 10vh fit-content minmax(10rem, 20rem);
     }
@@ -445,6 +446,9 @@ footer button:hover {
     }
     .contact p {
         grid-area: copy;
+    }
+    .contact a {
+        grid-area: contr;
     }
 
 }
