@@ -1,4 +1,48 @@
 const projectsContainer = document.querySelector(".projects");
+const langContainer = document.querySelector(".languagesContainer");
+
+const mySkills = [
+    {
+        "title": "HTML",
+        "logo": "../assets/svg/HTML5 Logo.svg"
+    },
+    {
+        "title": "CSS",
+        "logo": "../assets/svg/CSS3_logo.svg"
+    },
+    {
+        "title": "JS",
+        "logo": "../assets/svg/Javascript-shield.svg"
+    },
+    {
+        "title": "SAS",
+        "logo": "../assets/svg/SAS_logo.svg"
+    },
+    {
+        "title": "Excel",
+        "logo": "../assets/svg/Excel-logo.svg"
+    },
+    {
+        "title": "DAX and M",
+        "logo": "../assets/svg/PBI_logo.svg"
+    },
+    {
+        "title": "MS Power Fx",
+        "logo": "../assets/svg/Microsoft_Power_Apps_logo.svg"
+    },
+    {
+        "title": "Python",
+        "logo": "../assets/svg/Python-logo.svg"
+    },
+    {
+        "title": "TypeScript",
+        "logo": "../assets/svg/TypeScript logo.svg"
+    },
+    {
+        "title": "VBA",
+        "logo": "../assets/svg/Microsoft_Office_logo.svg"
+    }
+];
 
 const projectInformation = [
     {
@@ -8,7 +52,8 @@ const projectInformation = [
         "Color": "#2B0606", 
         "src" : "https://laughing-edison-5ee172.netlify.app",
         "img" : "../assets/CSM-Backgrop.jpg",
-        "txtColor": "#F88787"
+        "txtColor": "#F88787",
+        "gitLink": "https://github.com/Lysaker-git/Semester-project-CSM"
     },
     {
         "title": "Anime Facts",
@@ -17,7 +62,8 @@ const projectInformation = [
         "Color": "#0C3601", 
         "src" : "https://sharp-thompson-c35ea2.netlify.app",
         "img" : "../assets/Anime-Facts-Backdrop.jpg",
-        "txtColor": "#9BFB83"
+        "txtColor": "#9BFB83",
+        "gitLink": "https://github.com/Lysaker-git/Js-CA"
     },
     {
         "title": "Westie Addict",
@@ -26,7 +72,8 @@ const projectInformation = [
         "Color": "#551313", 
         "src" : "https://jocular-torte-76e22b.netlify.app",
         "img" : "../assets/Blog-backdrop.png",
-        "txtColor": "#E9AAAA"
+        "txtColor": "#E9AAAA",
+        "gitLink": "https://github.com/Noroff-FEU-Assignments/project-exam-1-Lysaker-git"
     },
     {
         "title": "Gamehub",
@@ -35,9 +82,26 @@ const projectInformation = [
         "Color": "#331A3F", 
         "src" : "https://peaceful-ritchie-993224.netlify.app",
         "img" : "../assets/Gamehub-backdrop.png",
-        "txtColor": "#9F89F8"
+        "txtColor": "#9F89F8",
+        "gitLink": "https://github.com/Lysaker-git/Gamehub-basics"
     }
 ];
+
+
+function getSkills () {
+    langContainer.innerHTML = "";
+    mySkills.forEach(skill => {
+        let title = skill.title;
+        let logo = skill.logo;
+
+        langContainer.innerHTML += `
+        <div class="skillCard">
+            <img src="${logo}">
+            <h3>${title}</h3>
+        </div>
+        `;
+    })
+}
 
 
 function getProjects () {
@@ -48,15 +112,18 @@ function getProjects () {
         let pTwo = project.Para2;
         let color = project.Color;
         let src = project.src;
+        let gitSrc = project.gitLink;
         let img = project.img;
         let txtColor = project.txtColor;
         let finishedContent = "";
+
+
         if (pTwo) {
             finishedContent = 
-                `<p>${pOne}</p>
-                <p>${pTwo}</p>`
+                `<div><p>${pOne}</p>
+                <p>${pTwo}</p></div>`
         } else {
-            finishedContent = `<p>${pOne}</p>`
+            finishedContent = `</div><p>${pOne}</p></div>`
         }
 
         
@@ -69,9 +136,14 @@ function getProjects () {
             <div class="max-w">
                 <h2>${title}</h2>
                 ${finishedContent}
+                <div class="cards-link">
+                <a href="${gitSrc}" style="
+                color: ${txtColor};
+                ">Go to Git</a>
                 <a href="${src}" style="
                 color: ${txtColor};
                 ">View Page</a>
+                </div>
             </div>
         </div>
 
@@ -80,4 +152,5 @@ function getProjects () {
 }
 
 getProjects();
+getSkills();
 

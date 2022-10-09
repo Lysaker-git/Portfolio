@@ -9,23 +9,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <header id="Home">
         <div class="posistion-nav max-w">
             <div class="small-nav">
                 <p>Logo</p>
                 <div class="hamburger">
-                    <img src="assets/TopBun.svg" alt="top-burger">
-                    <img src="assets/CenterMeat.svg" alt="mid-burger">
-                    <img src="assets/BottomBun.svg" alt="lower-burger">
+                    <img clas="hamburger-top" src="assets/TopBun.svg" alt="top-burger">
+                    <img clas="hamburger-middle" src="assets/CenterMeat.svg" alt="mid-burger">
+                    <img clas="hamburger-bottom" src="assets/BottomBun.svg" alt="lower-burger">
                 </div>
             </div>
             <nav>
                 <ul>
                     <li>
-                        <a href="#home" class="links">Home</a>
+                        <a href="#Home" class="links">Home</a>
                     </li>
                     <li>
                         <a href="#Projects" class="links">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#About" class="links">About Me</a>
+                    </li>
+                    <li>
+                        <a href="#Skills" class="links">Skills</a>
                     </li>
                     <li>
                         <a href="#Contact" class="links">Contact</a>
@@ -45,11 +51,69 @@
     <main>
         <section class="projects" id="Projects">
             <!-- INSERT PROJECTS  -->
+            <h2 class="loading">Loading Projects</h2>
         </section>
-        <section class="contact">
-
+        <section class="about" id="About">
+            <div class="left max-w">
+                <img src="assets/Portrait.png">
+            </div>
+            <div class="right max-w">
+                <h2>about me</h2>
+                <p>Hi my name is <span class="bold">Robin!</span> Nice to meet you!</p>
+                <p>I am a highly invested and eager Front-end developer with users in focus. As the web looks now there are way too many sites with little to no <span class="bold">little to no accessibility</span> - and i am planning on changing that - one page at a time. We need to know our costumers and how they experience our sites. Together we can make the web <span class="bold">accessible for everyone</span></p>
+                <p>I am also constantly searching for challenges and ways to develop myself. One of those are dancing. It is what keeps me wanting to always move forward.. Step for step.. triple step for triple step</p>
+                <p>.. and if you are curious about those triple steps - Contact me and lets dance! Either within a project or through dance!</p>
+                <p class="bold">Lets Connect!</p>
+            </div>
+        </section>
+        <section class="languages" id="Skills">
+            <h2>Skills:</h2>
+            <section class="languagesContainer max-w">
+                <p class="loading">Loading Languages</p>
+            </section>
         </section>
     </main>
-    
+    <footer class="contact "  id="Contact">
+        <div class="max-w">
+            <h2 class="max-w">Site map and contact info</h2>
+            <section class="contact-links">
+                <div class="first-links">
+                    <h3>Site map</h3>
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#About">About Me</a></li>
+                        <li><a href="#Skills">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="last-links">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><a href="https://github.com/Lysaker-git">Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/robin-lysaker-36295517b/">Linkdn</a></li>
+                    </ul>
+                </div>
+            </section>
+            <form action="POST" class="contact-form">
+                <h3>Contact Form</h3>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <label for="e-mail">E:mail</label>
+                <input type="email" name="email" id="email">
+                <label for="subject">Subject</label>
+                <select name="subject" id="subject">
+                    <option value="Front End">Web Development</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Automation">Automation</option>
+                    <option value="ExcelOnline">Excel365 Related</option>
+                    <option value="ExcelOffline">Visual Basic for Application</option>
+                    <option value="MSpower">MS power Fx</option>
+                </select>
+                <label for="text">Topic:</label>
+                <textarea name="text" id="text"></textarea>
+            </form>
+            <p>&copy; Robin Lysaker 2022</p>
+        </div>
+    </footer>
 </body>
 </html>
