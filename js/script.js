@@ -110,7 +110,7 @@ function getSkills () {
 
         langContainer.innerHTML += `
         <div class="skillCard">
-            <img src="${logo}">
+            <img src="${logo}" alt="Logo of ${title}">
             <h3>${title}</h3>
         </div>
         `;
