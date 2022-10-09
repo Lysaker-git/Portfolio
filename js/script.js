@@ -13,7 +13,7 @@ hamburger.addEventListener('click', function (event) {
     middleBun.classList.toggle("hamburger-middle-open");
     bottomBun.classList.toggle("hamburger-bottom-open");
 
-})
+});
 
 const mySkills = [
     {
@@ -114,8 +114,8 @@ function getSkills () {
             <h3>${title}</h3>
         </div>
         `;
-    })
-}
+    });
+};
 
 
 function getProjects () {
@@ -138,7 +138,7 @@ function getProjects () {
                 <p>${pTwo}</p></div>`
         } else {
             finishedContent = `</div><p>${pOne}</p></div>`
-        }
+        };
 
         
         projectsContainer.innerHTML += `
@@ -163,7 +163,7 @@ function getProjects () {
 
         `
     });
-}
+};
 
 getProjects();
 getSkills();
