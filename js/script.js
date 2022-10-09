@@ -19,7 +19,7 @@ const mySkills = [
         "logo": "../assets/svg/SAS_logo.svg"
     },
     {
-        "title": "Excel",
+        "title": "Excel Fx",
         "logo": "../assets/svg/Excel-logo.svg"
     },
     {
