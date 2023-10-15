@@ -1,4 +1,5 @@
 # Portfolio
+![Image of site](https://raw.githubusercontent.com/Lysaker-git/Portfolio/main/assets/site%20preview.png)
 
 A simple overview of the use/purpose of the project.
 
